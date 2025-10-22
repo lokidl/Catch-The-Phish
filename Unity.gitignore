@@ -97,3 +97,21 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Створіть нову гілку
+git checkout -b clean-project
+
+# Видаліть непотрібні файли
+git rm -r --cached Library/
+git rm -r --cached Temp/
+git rm -r --cached Obj/
+git rm -r --cached Build/
+
+# Додайте потрібні файли
+git add .
+git commit -m "Clean project structure"
+
+# Перейдіть на основну гілку і об'єднайте
+git checkout main
+git merge clean-project
+git push origin main
